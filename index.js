@@ -22,12 +22,14 @@ app.post("/url",async(req, res) => {
   //console.log(inputurl.inpurl)
   // Using async/await
 try {
+ if(inputurl.inpurl){
   await dlAudio({
     url: inputurl.inpurl,
     folder:  'downloads', // optional, default: "youtube-exec"
     filename: Math.random(), // optional, default: video title
     quality: "best", // or "lowest"; default: "best"
   });
+ }
   console.log("Audio downloaded successfully! 🔊🎉");
 } catch (err) {
   console.error("An error occurred:", err.message);
