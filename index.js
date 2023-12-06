@@ -8,6 +8,8 @@ const { dlAudio } = require("youtube-exec");
 //middleware
 app.use(cors());
 app.set("view engine", "ejs");
+
+app.set('views', (__dirname + "/views"));
 // For parsing application/json
 app.use(express.json());
  
