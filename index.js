@@ -6,7 +6,12 @@ const fs = require('fs');
 const { dlAudio } = require("youtube-exec");
 
 //middleware
-app.use(cors());
+var allowedOrigins = ['http://localhost:4000',
+                      'https://ytdownload-avilash12345s-projects.vercel.app/',
+                      'https://ytdownload-git-main-avilash12345s-projects.vercel.app/',
+                      'https://ytdownload-mu.vercel.app/'];
+
+app.use(cors(allowedOrigins));
 app.set("view engine", "ejs");
 
 app.set('views', (__dirname + "/views"));
