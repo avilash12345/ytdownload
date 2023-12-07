@@ -23,11 +23,17 @@ app.post("/url",async(req, res) => {
   const inputurl=req.body
   //console.log(inputurl.inpurl)
   // Using async/await
+
+  //file system
+  let openedDir = fs.opendirSync("/home/avilash/Music"); 
+
+// Print the pathname of the directory 
+//console.log("\nPath of the directory:", openedDir.path); 
 try {
  if(inputurl.inpurl){
   await dlAudio({
     url: inputurl.inpurl,
-    folder:  'downloads', // optional, default: "youtube-exec"
+    folder:  openedDir.path, // optional, default: "youtube-exec"
     filename: Math.random(), // optional, default: video title
     quality: "best", // or "lowest"; default: "best"
   });
