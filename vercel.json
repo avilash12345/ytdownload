@@ -11,7 +11,7 @@
     "routes": [
       {
         "src": "/(.*)",
-        "dest": "/url",
+        "dest": "/",
         "methods": ["GET", "POST", "PUT", "PATCH", "DELETE",  "OPTIONS"]
       }
     ]
